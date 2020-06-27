@@ -20,6 +20,10 @@ this.deleteOption = ReactSelector('OptionRenderer').withProps({
 });
 ```
 
+#### Trailer
+
+![demo](./docs/demo.gif)
+
 #### System Dependencies
 
 - Node
@@ -45,8 +49,11 @@ Postman needs the `username` and `password` to login unto the workspaces. So, wh
 
 ```ssh
 USERNAME="test1@test.com" PASSWORD="test123" npm run test:chrome
+```
 
-// or run in headless
+Or run in `headless`
+
+```ssh
 USERNAME="test1@test.com" PASSWORD="test123" npm run test:headless
 ```
 
