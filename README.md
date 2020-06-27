@@ -2,7 +2,7 @@
 
 Testcafe typescript postman workspace automation with neat folder structure and allure report.
 
-#### Key highlights
+## Key highlights
 
 - Typescript support
 - Neat folder structure
@@ -20,16 +20,18 @@ this.deleteOption = ReactSelector('OptionRenderer').withProps({
 });
 ```
 
-#### Trailer
+## Trailer
 
 ![demo](./docs/demo.gif)
 
-#### System Dependencies
+## System Dependencies
 
 - Node
 - JDK
 - Browsers [chrome/firefox] should be pre-installed in your local system
 - Docker (in-case interested in docker execution)
+
+## Get started
 
 #### Install dependencies
 
@@ -63,7 +65,7 @@ Reports will be generated inside `reports` folder.
 
 If you are using vscode, debug configuration is provided `.vscode/launch.json` file. Enable your breakpoints and hit `f5` to trigger the debug execution.
 
-#### Test Folder Structure
+## Test Folder Structure
 
 ```
 testcafe
@@ -88,7 +90,7 @@ The page object model resides under `testcafe` folder.
 - `specs` folder contains testcafe fixures
 - `utils` folder contains different testcafe helpers
 
-#### Docker execution commands
+## Docker execution commands
 
 Custom docker container should be build to create a test environment with all required dependencies. The docker configuration is stored at `docker/Dockerfile`.
 
@@ -116,19 +118,19 @@ npm run docker:stop:testcafe"
 npm run docker:deleteAll
 ```
 
-#### Jenkins integration
+## Jenkins integration
 
 jenkins test execution configuration is declared in `Jenkinsfile`
 
 To know more about Testcafe jenkins integration, reach out to [My Blog](https://medium.com/@abhinabaghosh.1994/dockerize-your-testcafe-tests-and-integrate-with-jenkins-6e37b3bc0405)
 
-#### Allure report
+## Allure report
 
 Reports will be generated for each test cases and allure will integrate those results and combine.
 
 ![allure-report](./docs/allure-report.png)
 
-#### Before you go
+## Before you go
 
 You can go-thorough my other `open source` assignments
 
