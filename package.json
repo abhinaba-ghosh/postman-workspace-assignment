@@ -1,0 +1,80 @@
+{
+  "name": "testcafe-typescript-starter",
+  "version": "1.0.0",
+  "description": "To demonstrate testcafe fixures with typescript",
+  "types": "./**/*.d.ts",
+  "jenkinsJobPath": "jenkins_home/jobs/",
+  "jenkinsJobConfigPath": "docker/jenkins/config/jobs",
+  "scripts": {
+    "clean": "rm -r reports/** || true",
+    "lint": "eslint . --ext ts",
+    "lint:fix": "eslint . --ext ts --fix",
+    "commit": "git-cz",
+    "e2e:chrome": "npx testcafe chrome ./testcafe/**/*.spec.ts --reporter allure,spec,xunit:reports/xml/report.xml",
+    "e2e:firefox": "npx testcafe firefox ./testcafe/**/*.spec.ts --reporter allure,spec,xunit:reports/xml/report.xml",
+    "e2e:headless": "testcafe chrome:headless ./testcafe/**/*.spec.ts --reporter allure,spec,xunit:reports/xml/report.xml",
+    "report": "allure generate reports/allure/allure-results --clean -o reports/allure/allure-report",
+    "report:publish": "allure open reports/allure/allure-report",
+    "docker:test:chrome": "docker run -u root -v ${PWD}:/tests -it testcafe/testcafe chromium /tests/**/*.spec.ts",
+    "docker:build:testcafe": "docker build -t testcafe -f docker/Dockerfile .",
+    "docker:stop:testcafe": "docker stop $(docker ps -qa --filter ancestor=testcafe)",
+    "docker:deleteAll": "docker rmi -f $(docker images -a -q)",
+    "test:chrome": "npm run clean && npm run e2e:chrome && npm run report && npm run report:publish",
+    "test:headless": "npm run clean && npm run e2e:headless && npm run report && npm run report:publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhinaba-ghosh/postman-workspace-assignment.git"
+  },
+  "author": "Abhinaba Ghosh <askabhinaba@gmail.com>",
+  "keywords": [],
+  "dependencies": {
+    "mssql": "^6.2.0",
+    "testcafe": "1.8.5",
+    "testcafe-react-selectors": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.38",
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "allure-commandline": "^2.13.0",
+    "angular": "^1.7.9",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-testcafe": "^0.2.1",
+    "eslint-plugin-unicorn": "^18.0.1",
+    "husky": "3.0.0",
+    "lint-staged": "9.2.0",
+    "log4js": "5.2.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "1.11.1",
+    "shelljs": "0.8.1",
+    "testcafe-reporter-allure": "^1.0.5",
+    "testcafe-reporter-spec": "^2.1.1",
+    "ts-node": "^8.9.1",
+    "ts-stopwatch": "0.0.4",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "3.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "pretty-quick --staged"
+    ],
+    "*.ts": [
+      "npm run lint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

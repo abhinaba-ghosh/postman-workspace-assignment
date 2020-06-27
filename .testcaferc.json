@@ -1,0 +1,12 @@
+{
+  "pageLoadTimeout": 20000,
+  "selectorTimeout": 10000,
+  "assertionTimeout": 10000,
+  "screenshots": {
+    "path": "reports/screenshots/",
+    "takeOnFails": true,
+    "pathPattern": "${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png",
+    "fullPage": true
+  },
+  "tsConfigPath": "./tsconfig.json"
+}

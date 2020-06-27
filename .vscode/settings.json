@@ -1,0 +1,29 @@
+{
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": true,
+    "other": true
+  },
+  "files.autoSave": "afterDelay",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 0,
+  "json.format.enable": false,
+  "terminal.integrated.rendererType": "dom",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "editor.accessibilitySupport": "off",
+  "typescript.referencesCodeLens.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "cSpell.enableFiletypes": ["dotenv", "text", "typescript", "typescriptreact"],
+  "cucumber-quick": {
+    "tool": "protractor",
+    "script": "npx protractor launch"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}
